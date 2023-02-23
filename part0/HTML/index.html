@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>0.1: HTML</title>
 </head>
 
@@ -36,12 +37,108 @@
         these elements are enlcosed by "tags" that can provide extra functionality (such as an &lt a &gt tag to "anchor"
         the element to an outside link)</p>
     <h3>What makes up an HTML element?</h3>
-    <p>This image is taken for the <a
+    <p>This image is taken from the <a
             href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">MDN HTML
             Basics page</a> and is used to visually represent the various parts that make up an HTML element:</p>
     <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-small.png"
         alt="Anatomy of an HTML Element">
-    <p>We can see that the <strong>content</strong> of the element is encapsulated within two <strong>tags</strong>; one <strong>opening </strong> tag and one <strong>closing </strong> tag</p>
+    <p>We can see that the <strong>content</strong> of the element is encapsulated within two <strong>tags</strong>; one
+        <strong>opening </strong> tag and one <strong>closing </strong> tag
+    </p>
+    <p>This image is alos taken from the <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">MDN HTML
+            Basics page</a> and is used to show the inclusion of an attribute (specifcally a class):</p>
+    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-attribute-small.png"
+        alt="Anatomy of an HTML Element">
+    <h3>Attributes</h3>
+    <p>Attributes provide extra context or information to an element. In the image above, a class name has been added to
+        element. <strong>Class</strong> is the attribute and <strong>"editor-note"</strong> is the value that has been
+        assigned to it.</p>
+    <p>Attributes that set values will always have:</p>
+    <ol>
+        <li>A space between the element name and itself</li>
+        <li>The attribute that is being calleds name followed by an "=" symbol</li>
+        <li>The value that is being assigned to the attribute enclosed by speech marks</li>
+    </ol>
+    <h3>Nesting Elements</h3>
+    <p>Nesting elements is the practice of enclosing an element wihtin another element. This can be used for various
+        reasons such as anchoring links, turning an image into a buttin or simply making a word more
+        <strong>bold</strong> or <em>emphasised</em>. Here is an example of how a nested element should be structured:
+    </p>
+    <p class="html-example">&lt;p&gt;My pigeon is tiny but &lt;strong&gt;incredibly&lt;/strong&gt;vicious.&lt/p&gt;</p>
+    <p>The &lt;strong&gt; element is nested inside the &lt;p&gt; element and show shows it on the same line</p>
+    <h3>Void</h3>
+    <p>A void element is an element type that has no inner content and no closing tag. The &lt;img&gt; element is a good
+        example of this:</p>
+    <p class="html-example">&lt;img src="images/firefox-icon.png" alt="My test image"/&gt;</p>
+    <p>It contains 2 attributes but does not require a closing tag. This is partly beacuase it's purpose is to enbed the
+        image in the place</p>
+    <h3>Basic Tags and Their Uses</h3>
+    <h4>Headings</h4>
+    <p>Headings are used to separate logical chunks of connected text and organise prose. In HTML, heading tags are
+        ordered from 1-6 to show greater or lesser importance. Think of tthe headings as serving similar purposes as:
+    </p>
+    <p><em>The &lt;h1&gt; tag is the largest and most important heading. Use it to convey the main title or purpose of
+            the page</em></p>
+    <h1>The main title of the page (&lt;h1&gt;)</h1>
+    <p><em>The &lt;h2&gt; tag is then used for things like the introduction in an essay or the first point or section of
+            the page</em></p>
+    <h2>A top level sub-heading (&lt;h2&gt;)</h2>
+    <p><em>The &lt;h3&gt; tag is then used for subsections of the &lt;h2&gt; section</em></p>
+    <h3 style="text-decoration: none;">A sub-level heading or subsection (&lt;h3&gt;)</h3>
+    <p><em>The &lt;h4&gt; tag is then used for subsections of the &lt;h3&gt; section</em></p>
+    <h4>A subsection (&lt;h4&gt;)</h4>
+    <p><em>The &lt;h5&gt; tag is then used for subsections of the &lt;h4&gt; section</em></p>
+    <h5>A subsection (&lt;h5&gt;)</h5>
+    <p><em>The &lt;h6&gt; tag is then used for subsections of the &lt;h5&gt; section</em></p>
+    <h6>A subsection (&lt;h6&gt;)</h6>
+    <p>In visually simpler terms:</p>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3 style="text-decoration: none;">Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Headings are an important aspect of effective SEO design</p>
+    <h3>Parapgraphs</h3>
+    <p>Paragraph elements (&lt;p&gt;) are used for containing paragraphs of text (!)</p>
+    <p>That's about it</p>
+    <h3>Lists</h3>
+    <p>There are two types of list in HTML each of which require two elements to effectively present a list. The two
+        types are "unordered lists" (&lt;ul&gt;) and "ordered lists" (&lt;ol&gt;)</p>
+    <h4>Unordered lists - Shopping lists, notes, objectives. Anything that does not neccesarily need to be done in a
+        specific order</h4>
+    <ul>
+        <li>Feed pigeon</li>
+        <li>Run away from pigeon</li>
+        <li>Hope pigeon forgets about me</li>
+    </ul>
+    <h4>Ordered Lists - Instructions, recipes etc. Anything that requires the list items to be done in order</h4>
+    <ol>
+        <li>Open your IDE</li>
+        <li>Type &lt;ol&gt; and hit return. It should automatically complete the closing tag for you</li>
+        <li>Inside the new ordered list type &lt;li&gt; to create a list item element. Again, most IDE's will auto
+            complete the closing tag for you</li>
+        <li>Type the steps between the tags</li>
+        <li>Congratualtions, you have made an ordered list!</li>
+    </ol>
+    <h3>Links</h3>
+    <p>Links are the backbone of the internet. You can link to other pages, other sites, other areas of the same page
+        etc. Adding links is very simple:</p>
+    <ol>
+        <li>Create an anchor tag (&lt;a&gt;&lt;/a&gt;)</li>
+        <li>Type the content between the angle brackets where the opening and closing tags meet (&lt;a&gt;Content to be
+            clicked&lt;/a&gt;)</li>
+        <li>Now we need to provide the anchor tag with a href (hyperlink reference) attribute that it will link to when
+            clicked:</li>
+        <ul>
+            <li>&lt;a href="https://fullstackopen.com/en/#course-contents"&gt;Content to be clicked&lt;/a&gt;</li>
+        </ul>
+        <li>Save and check the live page. The link will most likley now be blue with an underline like this:</li>
+        <ul>
+            <li><a href="https://fullstackopen.com/en/#course-contents">Helsinki Full Stack 2022 MOOC</a></li>
+        </ul>
+    </ol>
 </body>
 
 </html>

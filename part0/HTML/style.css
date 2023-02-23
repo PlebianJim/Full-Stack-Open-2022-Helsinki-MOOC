@@ -1,0 +1,27 @@
+
+
+h3 {
+    text-decoration: underline;
+}
+
+
+.html-example {
+    font-family: monospace; /* Use a monospace font for better visibility of symbols */
+    background-color: #f8f8f8;
+    padding: 10px;
+  }
+  
+  /* Hide the angle brackets using the :before and :after pseudo-elements */
+  .html-example:before,
+  .html-example:after {
+    content: ""; /* Remove any content */
+  }
+  
+  .html-example:before {
+    content: none; /* Hide the before content */
+  }
+  
+  .html-example:after {
+    content: none; /* Hide the after content */
+  }
+  
