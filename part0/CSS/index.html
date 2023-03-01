@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+    <title>0.2: CSS</title>
+</head>
+
+<body>
+    <h1>CSS Basics</h1>
+    <p>Cascading Style Sheets (CSS) is a language used in conjunction with HTML that <em>styles</em> content on the
+        page. HTML is used to provide structure, CSS is used to style and JavaScript is used to add functionality and
+        interactivy</p>
+    <p> CSS controls aspects of styling such as content <span style="vertical-align: sub;">positioning,</span> <span
+            style="color: red;">colour</span> and <span style="font-size: xx-large;">size</span></p>
+    <h3>Taking a closer look at a CSS ruleset</h3>
+    <p>In CSS, you use a <em>selector</em> to select elements, classes and ID's and then assign a style to them. The
+        syntax for CSS is quite simple. The following example shows a <em>selector</em> targeting all &lt;p&gt; elements
+        on a page and changing the colour to green:</p>
+    <p class="css-examples">p {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>}</p>
+    <p>If you wish to have more fine tuned control over which elements are impacted by the CSS rule, you can assign
+        <em>classes</em> and <em>ID's</em> to your elements and then select those specific elements
+    </p>
+    <p>This example targets all elements on the page that have the class <em>exampleClass</em> attached to them and then
+        changes the font size of each to 25px:</p>
+    <p class="css-examples">.exampleClass {<br>&nbsp;&nbsp;&nbsp;&nbsp;font-size: 25px;<br>}</p>
+    <p>And here you can see an element that has the ID <em>exampleID</em> attached in which the background colour of the
+        element is being targeted:</p>
+    <p class="css-examples" style="width: 25%">#exampleID {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: 25px;<br>}</p>
+    <h4>Breakdown and anatomy of a CSS ruleset</h4>
+    <p>There are three aspects that make up a CSS <em>ruleset</em>.</p>
+    <ol>
+        <li>Selector: The element, class or ID of the thing you want to change (p, .exampleClass, #exampleId)</li>
+        <li>Property: The aspect of the seleected element that you want to change (color, font-size, background-color)
+        </li>
+        <li>Property Value: The value you wish to assign to the element (red, 20px)</li>
+    </ol>
+    <p>This image from the MDN <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics">CSS Basics
+            Page</a> highlights the different sections very clearly:</p>
+    <img style="width: 425px; height: 240px"
+        src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png"
+        alt="MDN CSS Basics; Anatomy of a CSS ruleset">
+    <p>To add multiple properties to a single element, you simply write them on another line:</p>
+    <p class="css-examples" style="width: 25%">img {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color:
+        25px;<br>&nbsp;&nbsp;&nbsp;&nbsp;height: 25px;<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 25px;<br>}</p>
+    <h4>A note on syntax</h4>
+    <p>After assigning the <em>selector</em>, all of the contained properties must be enclosed in curly braces { }</p>
+    <p>Each <em>property</em> must be ended with a colon :</p>
+    <p>Each <em>property value</em> must end with a semi colon ;</p>
+    <h4>Selecting multiple elements, classes or ID's</h4>
+    <p>If you want to assign the same style or ruleset to multiple elements, classes or ID's, you can select them by
+        separating each <em>selector</em> with a comma like so:</p>
+    <p class="css-examples" style="width: 25%">#exampleID,<br> .exampleClass,<br> p
+        {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: 25px;<br>}</p>
+    <h4>Various different types of selectors</h4>
+    <p>The examples so far have all been <em>Element selectors</em> (Selecting all HTML elements of that type), <em>ID
+            selectors</em> (Selecting the HTML element with that specific ID type), and <em>Class selectors</em>
+        (Selecting all HTML elements of that type)</p>
+    <p>You can also use <em>Attribute selectors</em> (which target the elements on the page with that specific
+        attribute) and <em>Pseudo-classs selectors</em> (which target the specified element but only once in a specific
+        state or action is performed on it)</p>
+    <h4>Attribute Selectors:</h4>
+    <p>Syntax:</p>
+    <p class="css-examples" style="width: 25%">img[src] {<br>&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid black;<br>}</p>
+    <p>Selects the <em>src</em> attribute of an &lt;img&gt; element (&lt;img src=""myImage.png&gt;) but not the
+        &lt;img&gt; element</p>
+    <h4>Pseudo-Class Selectors:</h4>
+    <p>Syntax:</p>
+    <p class="css-examples" style="width: 25%">a:hover {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: pink;<br>}</p>
+    <p>Selects all &lt;a&gt; elements but only when the mouse hovers over it</p>
+    <h3>Fonts and Text</h3>
+    <p>There are a number of built-in fonts available to use with HTML but there are <em>thousands</em> of fonts that
+        can easily be plugged in with a simple &lt;link&gt; tag and <a href="https://fonts.google.com/">Google Fonts</a>
+    </p>
+    <p>To link a google font and use it, follow these steps:</p>
+    <ol>
+        <li>Navigate to <a href="">Google Fonts</a> and find something you like</li>
+        <li>Select a style and weight by clicking the <strong>Select XXX ### +</strong> button to the right of your
+            selected font</li>
+        <li>Next, select the icon in the top right to <strong>View selected families</strong></li>
+        <li>Select the <strong>&lt;link&gt;</strong> radio button then copy the code inside the box</li>
+        <li>Return to your index.html file and place the copied link into your &lt;head&gt; tag and before the closing
+            &lt;/head&gt; tag</li>
+        <li>Return to the Google Fonts page and now copy the<strong> CSS</strong> rules</li>
+        <li>Paste this ruleset into a CSS selector that you wish to use the font family in</li>
+    </ol>
+    <p>Now, you can add this font to any of the CSS selectors for granular use or simply create a ruleset for the
+        &lt;html&gt; tag to apply as default to everything on the page</p>
+    <p class="font-example"><strong>Here's the one I used in all it's glory!</strong></p>
+    <h3>Boxes or: Everything you see on the internet is actually a box</h3>
+    <p>Layout on a page using CSS is based on the <strong>box model</strong> with each <strong>box</strong> (read:
+        element) taking up space on the page</p>
+    <p>Each box has three properties:</p>
+    <ol>
+        <li>Padding: the space around the content</li>
+        <li>Border: A solid line that goes around the padding and content</li>
+        <li>Margin: the space outside of the border</li>
+    </ol>
+    <p>It is fairly easy to visualise. In the image below, provided by the MDN you can see the different properties and
+        their positioning</p>
+    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/box-model.png"
+        alt="Box moel example image from the MDN page on CSS basics">
+
+    <h4>Common CSS Properties</h4>
+    <p>There are almost more properties available in CSS than can feasibly be listed but the most common and likely to
+        be used in just about everything you might do are:</p>
+    <ul>
+        <li><strong style="font-family: monospace; background-color: darkgrey">width:</strong> Sets the width of an
+            element</li>
+        <li><strong style="font-family: monospace; background-color: darkgrey">background-color:</strong> the colour
+            behind an element and padding</li>
+        <li><strong style="font-family: monospace; background-color: darkgrey">color:</strong> the colour of an
+            element's content</li>
+        <li><strong style="font-family: monospace; background-color: darkgrey">text-shadow:</strong> sets a drop shadow
+            on the text inside an element. Useful for providing sharpness to multicoloured text</li>
+        <li><strong style="font-family: monospace; background-color: darkgrey">display:</strong> sets the display mode
+            of an element. Lot's of variation on this and an entire topic if research in it's own right</li>
+    </ul>
+    <h4>Changing the page colour</h4>
+    <p>Follow this link to see an example of a webpage with a button that simply changes the background colour the
+        entire page: <a href="backgroundSwitcher.html"> Background Colour Switcher</a></p>
+    <p>Using the <strong style="font-family: monospace; background-color: darkgrey">background-color</strong> property
+        alongside the <strong style="font-family: monospace; background-color: darkgrey">html</strong> element, allows
+        you to set the background colour for the entire page</p>
+    <p>The syntax for the CSS would look like:</p>
+    <p class="css-examples" style="width: 25%">html {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: lightgrey;<br>}</p>
+    <p>The example above is exactly what has been added to this page for the colour you see on the screen</p>
+    <h4>Styling the body</h4>
+    <p>The <strong style="font-family: monospace; background-color: darkgrey">body</strong> element is no different than
+        any other element on the page and can be styled in much the same way</p>
+    <p>This page has been styled using the following ruleset:</p>
+    <p class="css-examples" style="width: 55%">html {<br>&nbsp;&nbsp;&nbsp;&nbsp;width:
+        600px;<br>&nbsp;&nbsp;&nbsp;&nbsp;margin: 0 auto;<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(109, 102,
+        102);<br>&nbsp;&nbsp;&nbsp;&nbsp;padding: 0 20px 20px 20px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border: 5px solid
+        black;<br>}</p>
+</body>
+
+</html>

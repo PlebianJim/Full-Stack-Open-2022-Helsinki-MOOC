@@ -1,0 +1,33 @@
+html {
+    background-color: lightgrey;
+}
+
+.css-examples {
+    background-color: darkgray;
+    width: 15%;
+    padding: 2%;
+    border: 1px solid black;
+    font-family: monospace;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+.font-example {
+    font-family: 'Tilt Prism', cursive;
+}
+
+.box-model-example {
+    padding: 10px;
+    border: 10px solid black;
+    margin: 10px solid red;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: rgb(109, 102, 102);
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+  }

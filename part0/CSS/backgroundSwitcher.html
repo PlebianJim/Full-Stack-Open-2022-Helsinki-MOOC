@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Colour Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">Change Background Button</button>
+
+    <script>
+        //Get the button element
+        const btn = document.getElementById("btn");
+        //Add an event listener to listen for the click
+        btn.addEventListener("click", function(){
+            //generate a random colour using math floor and hexadecimal
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16)
+            //Change the background colour of the page based on the random colour/number generated
+            document.body.style.backgroundColor = "#" + randomColor;
+        });
+    </script>
+
+</body>
+
+</html>
