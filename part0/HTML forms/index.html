@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h3>What Are Web Forms?</h3>
+    <p>A web form is a simple form of interaction between a user and a web app. They allow the user to send data either
+        to a web server or used on the client-side to update the page in some meaningful way. Examples of this would be
+        updating a list, showing a UI feature, adding a product to a basket or joining a mailing list</p>
+    <h4>Form Controls</h4>
+    <p>Form controls or widgets are used to build the form and provide interactivity or purpose. They are generally
+        created using the &lt;form&gt; elemtn and can provide the user with various ways of inputting the data. These
+        include:</p>
+    <ul>
+        <li>single line text fields</li>
+        <li>multi line text fields</li>
+        <li>radio buttons</li>
+        <li>checkboxes</li>
+        <li>dropdown boxes</li>
+    </ul>
+    <h4>Form Validation</h4>
+    <p>Form validation refers to the fact that the form controls can be programmed to enforce or require specific
+        formats or values when input. They are generally paired with text labels to provide semantic meaning as well as
+        express the purpose of the form or it's various parts</p>
+    <h3>Form Design</h3>
+    <p>The MDN <a href="">Your First Form</a> page, suggests the following further reading for UX design:</p>
+    <ul>
+        <li>Smashing Magazine: <a href="https://www.smashingmagazine.com/2018/08/ux-html5-mobile-form-part-1/">UX And
+                HTML5: Let's Help Users Fill In Your Mobile Form (Part 1)</a></li>
+        <li>UXMatters: <a
+                href="https://www.uxmatters.com/mt/archives/2010/03/pagination-in-web-forms-evaluating-the-effectiveness-of-web-forms.php">Pagination
+                in Web Forms | Evaluating the Effectiveness of Web Forms</a></li>
+    </ul>
+    <p>The above are suggested articles for digging deeper into UX design specifically related to forms</p>
+    <p>Below, I follow along with their guide on creating a simple contact form. The mock up that is provided by MDN
+        looks like this:</p>
+    <img src="https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form/form-sketch-low.jpg"
+        alt="MDN form mock up - Your First Form">
+    <p>The form will contain:</p>
+    <ul>
+        <li>Three text fields</li>
+        <li>One button</li>
+    </ul>
+    <p>And be built using the following elements:</p>
+    <ul>
+        <li>&lt;form&gt;</li>
+        <li>&lt;label&gt;</li>
+        <li>&lt;input&gt;</li>
+        <li>&lt;textarea&gt;</li>
+        <li>&lt;button&gt;</li>
+    </ul>
+    <p>Pressing the button will send the included data to a web server</p>
+    <p>Here is the link to the completed form: <a href="form.html">The Form</a></p>
+    <h3>The &lt;form&gt; element</h3>
+    <p>All forms will start with the &lt;form&gt; element. It is a container element that formally defines the form and
+        semantically marks it as such. It has some inherrent attributes as well as supporting specific attributes to
+        tell the form how to behave and how to process the information included in it. Most of the attributes are
+        optional but it is generally considered goofd practice to include at the very least the <strong>action</strong>
+        and <strong>method</strong> attributes:</p>
+    <ul>
+        <li>Action: Defines the URL where the collected data will be sent once submitted</li>
+        <li>Method: defines the type of metho to send the data (usually either POST or GET)</li>
+    </ul>
+    <p>Here is the example code for this first stage:</p>
+    <p class="code-example">&lt;form action="/my-handling-form-page" method="post"&gt;...&lt;/form&gt;</p>
+    <h3>The &lt;label&gt;, &lt;input&gt; and &lt;textarea&gt; elements</h3>
+    <p>There will be 3 very simple data entry areas with a connected &lt;label&gt;:</p>
+    <ul>
+        <li>The input field for the name is a single-line text field</li>
+        <li>The input field for the email is an input of type email. This is a single-line text area that only accepts
+            email addresses. An error will be thrown to the screen should a domain name not be included</li>
+        <li>The input filed for the message that will be sent is a &lt;textarea&gt; which is a multiline text field</li>
+    </ul>
+    <p>With the addition of these form controls (or widgets), the code now looks like this:</p>
+    <p class="code-example">&lt;form action="/my-handling-form-page"
+        method="post"&gt;...&lt;/form&gt;<br>&nbsp;&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+        for="name"&gt;Name:&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="name"
+        name="user_name"/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+        for="mail"&gt;Email:&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email" id="mail"
+        name="user_email"/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+        for="msg"&gt;Message:&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea id="msg"
+        name="user_message"&gt;&lt;/textarea&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;ul&gt;<br>&lt;/form&gt;
+    </p>
+    <p>The &lt;li&gt; elements are used to format the form and code and make styling simpler. An explicit label is used
+        for each form control (widget) for usability and accessibility. This is added to by the use of a
+        <strong>for</strong> attribute on each &lt;label&gt; element which is provided with an <strong>id</strong> that
+        matches the <strong>for</strong> attribute in each label. This is to associate each form control with each label
+    </p>
+    <p>This is becuase associating a label with the form control/widget anbles a whole bunch of features such as ouse,
+        trackpad and touch device activation. A user using any of those different input methods can simply click it to
+        activate it as well as providing semantic meaning for users making use of screen readers</p>
+    <p>With the &lt;input&gt; element, the <strong>type</strong> attribute is the most important to add. It defines the
+        way in which the &lt;input&gt; element will be presented and behave</p>
+    
+</body>
+
+</html>

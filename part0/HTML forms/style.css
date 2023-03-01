@@ -1,0 +1,11 @@
+h3 {
+    text-decoration: underline;
+}
+
+.code-example {
+    background-color: darkgray;
+    width: 50%;
+    padding: 2%;
+    border: 1px solid black;
+    font-family: monospace;
+}
