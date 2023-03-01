@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Forms</title>
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -93,12 +96,46 @@
         <strong>for</strong> attribute on each &lt;label&gt; element which is provided with an <strong>id</strong> that
         matches the <strong>for</strong> attribute in each label. This is to associate each form control with each label
     </p>
-    <p>This is becuase associating a label with the form control/widget anbles a whole bunch of features such as ouse,
+    <p>This is becuase associating a label with the form control/widget enables a whole bunch of features such as mouse,
         trackpad and touch device activation. A user using any of those different input methods can simply click it to
         activate it as well as providing semantic meaning for users making use of screen readers</p>
     <p>With the &lt;input&gt; element, the <strong>type</strong> attribute is the most important to add. It defines the
         way in which the &lt;input&gt; element will be presented and behave</p>
-    
+    <ul>
+        <li>In the example, the first input has a <strong>type</strong> of text. This will display a single-lline text
+            field that accepts any text input</li>
+        <li>The second input has a type of <strong>email</strong>. Again, this is a single-line text area but this
+            particular area will require a well-formed email address. It turns the filed into an "intelligent" field
+            that perfroms a little bit of validiation to ensure that it includes an @ symbol</li>
+        <li>The third input does not exist but does include &lt;textarea&gt;</li>
+    </ul>
+    <h3>The &lt;button&gt; element</h3>
+    <p>The final aspect needed to make the form functional is a button that allows the input data to be sent to the
+        designated server/location. This is achieved by including a &lt;button&gt; element</p>
+    <p>The example code for this form looks like this:</p>
+    <p class="code-example">&lt;li class="button"&gt;<br>&nbsp;&nbsp;&lt;button type="submit"&gt;Send your
+        message&lt;/button&gt;<br>&lt;/li&gt;</p>
+    <p>This is placed just above the closing &lt;/ul&gt; tag in the HTML</p>
+    <p>The &lt;button&gt; element also needs a <strong>type</strong> attribute with one of three different values:</p>
+    <ul>
+        <li><strong>submit:</strong> sends the data included in the form to the web page that has been defined inside
+            the <strong>action</strong> attribute on the &lt;form&gt; element</li>
+        <li><strong>reset:</strong> resets all widgets to their default value</li>
+        <li><strong>button</strong> does nothing unless fucntionality is added through JavaScript. Allows you to define
+            your own functionality</li>
+    </ul>
+    <h3>Styling the form</h3>
+    <p>To view the CSS used to style the sheet, check the dev console or page source</p>
+    <h3>Sending the form data to the web server</h3>
+    <p>The &lt;form&gt; element defines where and how to senf the data. These two aspects are defined by the <strong>action</strong> and <strong>method</strong> attributes</p>
+    <p>A <strong>name</strong> attribute is added to each form control element (input element). Whatever is written in that attribute is attached to the data entered into the related field as metadata. This is the <em>name</em> part of <em>name/value</em> pairs. Whatever is written into the field is attached to the <strong>name</strong> attribute. When this is sent to the server, the script that runs on the server to handle sent data evaluates the data included in each <em>name</em> and then organises or palces it into the relevant database entry</p>
+    <p>So in the example form, the <em>names</em> of the name value pairs are:</p>
+        <ol>
+            <li>user_name</li>
+            <li>user_email</li>
+            <li>user_message</li>
+        </ol>
+    <p>On the server/database, there will be a section that corresponds to each of the above names. The form is sent (pairing the <em>name</em> and the <em>value</em> of each into a <em>name/value pair</em>), evaluated and then organised into the ocrrect section</p>
 </body>
 
 </html>
